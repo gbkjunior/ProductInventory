@@ -10,7 +10,7 @@ import {environment} from '../environments/environment';
 import { AppComponent } from './app.component';
 import {ProdInvService} from './service/prod-inv.service';
 import { ProductSearchComponent } from './components/product-search/product-search.component';
-import { ProductDisplayComponent } from './components/product-display/product-display.component';
+
 const API_URL = environment.apiUrl;
 /*
 var routes = [
@@ -42,7 +42,7 @@ var routes = [
   declarations: [
     AppComponent,
     ProductSearchComponent,
-    ProductDisplayComponent
+    
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule, HttpModule
