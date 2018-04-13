@@ -1,0 +1,20 @@
+<div class="searchbar" >
+  <input type="text" placeholder="Enter product to search"  [(ngModel)]="prodName" >
+  <button class="btn" (click)="getProductByName(prodName)"  >Get</button>
+  <button class="btn" (click)="getAllProducts()"  >Get All Products </button>
+
+  
+    <ul *ngFor = "let prods of prodInv " >
+      <ng-container *ngIf="prods.name != null ; else error">
+          <li>Name:  {{prods.name}}</li>   
+          <li>Price:  {{prods.price}}</li>   
+          <li>Inventory: {{prods.inventory}}</li>
+          
+      </ng-container>
+      <ng-template #error>
+        <li> {{prods.error}}</li>
+      </ng-template>
+    </ul>
+  
+
+</div>
