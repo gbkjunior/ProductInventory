@@ -44,6 +44,7 @@ export class ProductSearchComponent implements OnInit {
       prodInvTo => {
         this.prodInv = prodInvTo;
         console.log(this.prodInv);
+        prodName = "";
       }
       
     )
