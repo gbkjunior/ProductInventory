@@ -30,9 +30,9 @@ export class ProductSearchComponent implements OnInit {
     //this.clickedGetAll = true;
      this.prodInvService.getAllProductsWithInventory().subscribe(
       prodInvToo =>{
-        console.log(prodInvToo);
+
         this.prodInv = prodInvToo;
-        console.log(this.prodInv);
+
       }
     )
   }
@@ -40,11 +40,12 @@ export class ProductSearchComponent implements OnInit {
   getProductByName(prodName) {
     //prodName = this.activatedRoute.snapshot.params.name;
     //this.clickedGetAll = true;
+ 
     this.prodInvService.getProductByName(prodName).subscribe(
       prodInvTo => {
         this.prodInv = prodInvTo;
-        console.log(this.prodInv);
-        prodName = "";
+        
+        
       }
       
     )
@@ -53,6 +54,3 @@ export class ProductSearchComponent implements OnInit {
 
 }
 
-console.log(this.productInv);
-console.log(ins);
-console.log(this.prodInv);

@@ -13,9 +13,3 @@ export class ProdInv implements Prod {
         Object.assign(this,values);
     }
 }
-
-var task = {} as Prod;
-
-var ct = new ProdInv(task)
-
-console.log(ct);

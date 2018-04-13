@@ -1,5 +1,5 @@
 <div class="searchbar" >
-  <input type="text" placeholder="Enter product to search"  [(ngModel)]="prodName" >
+  <input type="text" placeholder="Enter product to search"  [(ngModel)]="prodName" [value]="prodName" >
   <button class="btn" (click)="getProductByName(prodName)" [disabled]="!prodName" >Get</button>
   <button class="btn" (click)="getAllProducts()"  >Get All Products </button>
 

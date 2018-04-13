@@ -18,7 +18,7 @@ export class ProdInvService {
   constructor(private http: Http) { }
 
     public getProductByName(name: string): Observable<ProdInv[]> {
-    console.log(name);
+    
     return Observable.forkJoin([
       this.http.get(API_URL + '/products/'+name, options).map(res=>res.json()),
       this.http.get(API_URL+'/inventory/'+name, options).map(resp =>resp.json())  
@@ -26,13 +26,12 @@ export class ProdInvService {
       (data: ProdInv[]) => {
         let product : any = data[0];
         let inventory : any = data[1];
-        console.log(product.product);
-        console.log(inventory.inventory);
+
         if(product.product.length > 0) {
           product.product.forEach(function(element,index){
             element.inventory = inventory.inventory[index].inventory;
           })
-          console.log(product.product);
+          
           return product.product;
         }
         else {
@@ -68,7 +67,7 @@ export class ProdInvService {
     ).map(
       (data : ProdInv[]) => {
         let products :any= data[0];
-        console.log(products);
+        
         let inventory : any = data[1].inventory;
         let inv : number[] = [];
         for(var i=0; i< inventory.length;i++)
@@ -80,9 +79,6 @@ export class ProdInvService {
             element.inventory = inv[index];
           });
         
-        //console.log(products);
-        //console.log(products[0].name);
-        //console.log(inventory[1].inventory);
         return products;
       }
     ).catch(this.handleError)
